@@ -1,5 +1,5 @@
-class PlantsController < ApplicationController
-  before_action :set_plant, only: [:show, :edit, :update, :destroy]
+class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @plants = Plant.all
@@ -61,7 +61,7 @@ class PlantsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_plant
+    def set_user
       @plant = Plant.find(params[:id])
     end
 
