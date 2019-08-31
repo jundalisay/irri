@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  
-  root to: 'plants#index'
+  resources :crops
+  resources :coconut1s
+  resources :coffee1s
+  resources :rice3s
+  resources :rice2s
+  resources :rice1s
+  root to: 'crops#index'
   devise_for :users
   resources :plants
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :ratios  
 end

@@ -1,0 +1,32 @@
+.p-4
+  .row
+    .col-12.col-lg-3
+      .pt-3.pb-1
+        h1 = Crop.fifth.shortname.humanize
+        .text-secondary
+          = Crop.fifth.name
+          br
+          = Crop.fifth.country.name
+          br
+          = Crop.fifth.province.name
+          br
+          .text-center
+            b #{Crop.fifth.province.name} Market Prices (pesos per kg)
+            br
+            = line "prices", @size, @data 
+          br
+          br
+          .text-center
+            b Maturity (days)
+            br
+            = line "maturity", @size, @maturity
+          /= radar "radar_id", @radarSize, @radarData
+
+      .pb-2
+      // FILTER BUTTONS
+      .pb-2.d-flex.justify-content-between.flex-wrap
+    // HALF    
+    .col-12.col-lg-9
+      .card-columns
+        = render @coffee1s
+      

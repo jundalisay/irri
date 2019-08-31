@@ -5,17 +5,13 @@ class PlantsController < ApplicationController
     @plants = Plant.all
   end
 
-  # GET /plants/1
-  # GET /plants/1.json
   def show
   end
 
-  # GET /plants/new
   def new
     @plant = Plant.new
   end
 
-  # GET /plants/1/edit
   def edit
   end
 

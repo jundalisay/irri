@@ -1,0 +1,15 @@
+.card.shadow.zoom-xs.mb-3
+  /= ratio.first
+  = ratio.select{ |r| r.first.id}
+  /= link_to ratio.select{ |r| r.first}
+    /.text-center
+      = image_tag ratio.first.photo, class: "img-fluid rounded"
+    .card-footer.text-muted
+      h4 
+      .small
+        /.d-flex.justify-content-end.flex-wrap.pb-2
+          = ratio.name
+      .text-right
+        /small = ratio.updated_at.strftime("%m/%d/%y at %l:%M %p")
+
+        

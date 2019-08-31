@@ -4,28 +4,10 @@
       .pt-3.pb-1
         h1 = t 'helpers.animals'
       .pb-2
-        / = render partial: 'parts/input/search/index'
       // FILTER BUTTONS
       .pb-2.d-flex.justify-content-between.flex-wrap
-        /= render partial: 'parts/buttons/item/index/filters'
-      // DROPDOWN
-      /#accordion
-        = render partial: 'parts/buttons/item/index/provinces'
-        = render partial: 'parts/buttons/item/index/category_list'
-        = render partial: 'parts/buttons/item/index/taggings'
-      // LEFT PANE TEXT
-      /- if current_user.blank?
-        = render partial: 'item/index/welcome'
-        .text-center
-          = render partial: 'parts/buttons/google'
-          = render partial: 'parts/buttons/fb'
     // HALF    
     .col-12.col-lg-9
-      /- if params[:q] && @items.blank?
-        .text-center
-          = render partial: 'item/index/no_results'
-      /- else
-        .card-columns
-          = render partial: 'item/index/card', collection: @items, as: :item
-        = render partial: 'parts/buttons/item/index/pagination'
-        
+      .card-columns
+        = render @plants
+      

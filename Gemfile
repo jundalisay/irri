@@ -3,9 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem "chart"
 gem 'devise', github: 'plataformatec/devise'
 gem 'rails', '~> 6.0.0'
-gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -18,6 +18,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap'
 gem 'simple_form' # rails generate simple_form:install --bootstrap
 gem 'slim-rails'
+gem 'jquery-rails'
+gem 'pg'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

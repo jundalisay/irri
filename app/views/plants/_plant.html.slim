@@ -1,0 +1,20 @@
+/- ye
+
+.card.shadow.zoom-xs.mb-3
+  = link_to plant
+    .text-center
+      = image_tag plant.photo, class: "img-fluid rounded"
+    .card-footer.text-muted
+      h4 
+      .small
+        .d-flex.justify-content-end.flex-wrap.pb-2
+          = plant.name
+          br
+          = plant.name
+
+          /- if plant.currency_price.present?
+            .pr-2
+              | #{t 'money.set price'} #{number_to_currency(item.currency_price, unit: "#{item.currency} ")} 
+      .text-right
+        small = plant.updated_at.strftime("%m/%d/%y at %l:%M %p")
+        

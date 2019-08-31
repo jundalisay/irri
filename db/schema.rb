@@ -10,12 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_30_162458) do
+ActiveRecord::Schema.define(version: 2019_08_31_023956) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "coconut1s", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "crop_id"
+    t.integer "year"
+    t.integer "month"
+    t.float "temperature"
+    t.integer "flower"
+    t.integer "maturity"
+    t.string "photo"
+    t.float "height"
+    t.float "yield"
+    t.integer "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["crop_id"], name: "index_coconut1s_on_crop_id"
+    t.index ["user_id"], name: "index_coconut1s_on_user_id"
+  end
+
+  create_table "coffee1s", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "crop_id"
+    t.integer "year"
+    t.integer "month"
+    t.float "temperature"
+    t.integer "flower"
+    t.integer "maturity"
+    t.string "photo"
+    t.float "height"
+    t.float "yield"
+    t.integer "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["crop_id"], name: "index_coffee1s_on_crop_id"
+    t.index ["user_id"], name: "index_coffee1s_on_user_id"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -24,13 +63,33 @@ ActiveRecord::Schema.define(version: 2019_08_30_162458) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "plants", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "country_id"
-    t.integer "province_id"
-    t.integer "category_id"
+  create_table "crops", force: :cascade do |t|
+    t.bigint "country_id"
+    t.bigint "province_id"
+    t.bigint "category_id"
+    t.string "shortname"
     t.string "name"
     t.string "photo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_crops_on_category_id"
+    t.index ["country_id"], name: "index_crops_on_country_id"
+    t.index ["province_id"], name: "index_crops_on_province_id"
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "country_id"
+    t.bigint "province_id"
+    t.bigint "category_id"
+    t.string "shortname"
+    t.string "name"
+    t.integer "flower"
+    t.integer "maturity"
+    t.float "height"
+    t.float "yield"
+    t.string "photo"
+    t.string "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_plants_on_category_id"
@@ -40,12 +99,90 @@ ActiveRecord::Schema.define(version: 2019_08_30_162458) do
   end
 
   create_table "provinces", force: :cascade do |t|
-    t.integer "country_id"
+    t.bigint "country_id"
     t.string "name"
     t.string "shortname"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["country_id"], name: "index_provinces_on_country_id"
+  end
+
+  create_table "ratios", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "country_id"
+    t.bigint "province_id"
+    t.bigint "category_id"
+    t.integer "year"
+    t.integer "month"
+    t.float "temperature"
+    t.string "shortname"
+    t.string "name"
+    t.integer "flower"
+    t.integer "maturity"
+    t.string "photo"
+    t.float "height"
+    t.float "yield"
+    t.integer "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_ratios_on_category_id"
+    t.index ["country_id"], name: "index_ratios_on_country_id"
+    t.index ["province_id"], name: "index_ratios_on_province_id"
+    t.index ["user_id"], name: "index_ratios_on_user_id"
+  end
+
+  create_table "rice1s", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "crop_id"
+    t.integer "year"
+    t.integer "month"
+    t.float "temperature"
+    t.integer "flower"
+    t.integer "maturity"
+    t.string "photo"
+    t.float "height"
+    t.float "yield"
+    t.integer "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["crop_id"], name: "index_rice1s_on_crop_id"
+    t.index ["user_id"], name: "index_rice1s_on_user_id"
+  end
+
+  create_table "rice2s", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "crop_id"
+    t.integer "year"
+    t.integer "month"
+    t.float "temperature"
+    t.integer "flower"
+    t.integer "maturity"
+    t.string "photo"
+    t.float "height"
+    t.float "yield"
+    t.integer "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["crop_id"], name: "index_rice2s_on_crop_id"
+    t.index ["user_id"], name: "index_rice2s_on_user_id"
+  end
+
+  create_table "rice3s", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "crop_id"
+    t.integer "year"
+    t.integer "month"
+    t.float "temperature"
+    t.integer "flower"
+    t.integer "maturity"
+    t.string "photo"
+    t.float "height"
+    t.float "yield"
+    t.integer "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["crop_id"], name: "index_rice3s_on_crop_id"
+    t.index ["user_id"], name: "index_rice3s_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,9 +197,26 @@ ActiveRecord::Schema.define(version: 2019_08_30_162458) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "coconut1s", "crops", on_delete: :nullify
+  add_foreign_key "coconut1s", "users", on_delete: :nullify
+  add_foreign_key "coffee1s", "crops", on_delete: :nullify
+  add_foreign_key "coffee1s", "users", on_delete: :nullify
+  add_foreign_key "crops", "categories", on_delete: :nullify
+  add_foreign_key "crops", "countries", on_delete: :nullify
+  add_foreign_key "crops", "provinces", on_delete: :nullify
   add_foreign_key "plants", "categories", on_delete: :nullify
   add_foreign_key "plants", "countries", on_delete: :nullify
   add_foreign_key "plants", "provinces", on_delete: :nullify
   add_foreign_key "plants", "users", on_delete: :nullify
   add_foreign_key "provinces", "countries", on_delete: :nullify
+  add_foreign_key "ratios", "categories", on_delete: :nullify
+  add_foreign_key "ratios", "countries", on_delete: :nullify
+  add_foreign_key "ratios", "provinces", on_delete: :nullify
+  add_foreign_key "ratios", "users", on_delete: :nullify
+  add_foreign_key "rice1s", "crops", on_delete: :nullify
+  add_foreign_key "rice1s", "users", on_delete: :nullify
+  add_foreign_key "rice2s", "crops", on_delete: :nullify
+  add_foreign_key "rice2s", "users", on_delete: :nullify
+  add_foreign_key "rice3s", "crops", on_delete: :nullify
+  add_foreign_key "rice3s", "users", on_delete: :nullify
 end

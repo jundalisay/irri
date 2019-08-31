@@ -1,0 +1,32 @@
+.px-4
+  .row
+    .col-12.col-lg-3
+      .pt-3.pb-1
+        h1 = Crop.fourth.shortname.humanize
+        .text-secondary
+          = Crop.fourth.name
+          br
+          = Crop.fourth.country.name
+          br
+          = Crop.fourth.province.name
+          br
+          .text-center
+            b Prices (pesos per kg)
+            br
+            /= line "prices", @size, @data 
+          br
+          br
+          .text-center
+            b Maturity (days)
+            br
+            /= line "maturity", @size, @maturity
+          /= radar "radar_id", @radarSize, @radarData
+
+      .pb-2
+      // FILTER BUTTONS
+      .pb-2.d-flex.justify-content-between.flex-wrap
+    // HALF    
+    .col-12.col-lg-9
+      .card-columns
+        = render @coconut1s
+      

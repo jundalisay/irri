@@ -1,0 +1,32 @@
+.card.shadow.zoom-xs.mb-3.text-center
+  
+  = image_tag rice1.photo, class: "img-fluid rounded"
+  .d-flex.flex-wrap
+    .pl-2
+      b Harvest Month: #{rice1.month} / #{rice1.year}
+    .pl-2
+      b Time to flower:  
+      = rice1.flower
+    .pl-2
+      b Time to mature:
+      = rice1.maturity 
+    .pl-2 
+      b Height: 
+      = rice1.height
+    .pl-2 
+      b Yield per hectare:        
+      = rice1.yield
+    .pl-2
+      b Price per kg: 
+      = rice1.price
+  /= link_to ratio.select{ |r| r.first}
+    
+    .card-footer.text-muted
+      h4 
+      .small
+        /.d-flex.justify-content-end.flex-wrap.pb-2
+          = ratio.name
+      .text-right
+        /small = ratio.updated_at.strftime("%m/%d/%y at %l:%M %p")
+
+        

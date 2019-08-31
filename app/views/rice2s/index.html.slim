@@ -1,0 +1,19 @@
+h1 Listing rice2s
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @rice2s.each do |rice2|
+      tr
+        td = link_to 'Show', rice2
+        td = link_to 'Edit', edit_rice2_path(rice2)
+        td = link_to 'Destroy', rice2, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Rice2', new_rice2_path

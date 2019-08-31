@@ -1,0 +1,121 @@
+.px-4
+  .row
+    .col-12.col-lg-3
+      .pt-3.pb-1
+        h1 SUPRICe Crops database
+      .pb-2
+      .pb-2.d-flex.justify-content-between.flex-wrap
+    // HALF    
+    .col-12.col-lg-9
+      .card-columns
+        .card.shadow.zoom-xs.mb-3
+          = link_to rice1s_path
+            .text-center
+              = image_tag Crop.first.photo, class: "img-fluid rounded"
+            .card-footer.text-muted
+              h4
+              .small
+                .d-flex.justify-content-end.flex-wrap.pb-2
+                  .pr-2
+                    = Crop.first.name
+                  .pr-2
+                    = Crop.first.shortname                      
+                  .pr-2
+                    = Crop.first.country.name
+                  .pr-2
+                    = Crop.first.province.name
+                  .pr-2
+                    = Crop.first.category.name
+        .card.shadow.zoom-xs.mb-3
+          = link_to rice2s_path
+            .text-center
+              = image_tag Crop.second.photo, class: "img-fluid rounded"
+            .card-footer.text-muted
+              h4
+              .small
+                .d-flex.justify-content-end.flex-wrap.pb-2
+                  .pr-2
+                    = Crop.second.name
+                  .pr-2
+                    = Crop.second.shortname                      
+                  .pr-2
+                    = Crop.second.country.name
+                  .pr-2
+                    = Crop.second.province.name
+                  .pr-2
+                    = Crop.second.category.name
+        .card.shadow.zoom-xs.mb-3
+          = link_to rice3s_path
+            .text-center
+              = image_tag Crop.third.photo, class: "img-fluid rounded"
+            .card-footer.text-muted
+              h4
+              .small
+                .d-flex.justify-content-end.flex-wrap.pb-2
+                  .pr-2
+                    = Crop.third.name
+                  .pr-2
+                    = Crop.third.shortname                      
+                  .pr-2
+                    = Crop.third.country.name
+                  .pr-2
+                    = Crop.third.province.name
+                  .pr-2
+                    = Crop.third.category.name
+        .card.shadow.zoom-xs.mb-3
+          = link_to coconut1s_path
+            .text-center
+              = image_tag Crop.fourth.photo, class: "img-fluid rounded"
+            .card-footer.text-muted
+              h4
+              .small
+                .d-flex.justify-content-end.flex-wrap.pb-2
+                  .pr-2
+                    = Crop.fourth.name
+                  .pr-2
+                    = Crop.fourth.shortname                      
+                  .pr-2
+                    = Crop.fourth.country.name
+                  .pr-2
+                    = Crop.fourth.province.name
+                  .pr-2
+                    = Crop.fourth.category.name
+        .card.shadow.zoom-xs.mb-3
+          = link_to coffee1s_path
+            .text-center
+              = image_tag Crop.fifth.photo, class: "img-fluid rounded"
+            .card-footer.text-muted
+              h4
+              .small
+                .d-flex.justify-content-end.flex-wrap.pb-2
+                  .pr-2
+                    = Crop.fifth.name
+                  .pr-2
+                    = Crop.fifth.shortname                      
+                  .pr-2
+                    = Crop.fifth.country.name
+                  .pr-2
+                    = Crop.fifth.province.name
+                  .pr-2
+                    = Crop.fifth.category.name                                        
+        
+
+        /- @crops.each do |c|
+          .card.shadow.zoom-xs.mb-3
+            = link_to c
+              .text-center
+                = image_tag c.photo, class: "img-fluid rounded"
+              .card-footer.text-muted
+                h4
+                .small
+                  .d-flex.justify-content-end.flex-wrap.pb-2
+                    .pr-2
+                      = c.name
+                    .pr-2
+                      = c.shortname                      
+                    .pr-2
+                      = c.country.name
+                    .pr-2
+                      = c.province.name
+                    .pr-2
+                      = c.category.name

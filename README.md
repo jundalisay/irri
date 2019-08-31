@@ -1,24 +1,5 @@
-# README
+# SUPRICe!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SUPRICe stands for **S**upply **U**tilitzation **P**rice **R**esearch **I**ntelligence **Ce**nter
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![SUPRICe](https://ik.imagekit.io/sora/logos/supricelogo_jlAvH11v0.jpg)
