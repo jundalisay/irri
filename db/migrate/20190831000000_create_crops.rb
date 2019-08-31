@@ -7,6 +7,13 @@ class CreateCrops < ActiveRecord::Migration[6.0]
       t.string :shortname
       t.string :name
       t.string :photo
+      t.float :water
+      t.float :nutrients
+      t.float :temperature
+      t.float :soil
+      t.float :elevation
+      t.float :humidity
+      t.float :ph
       t.timestamps
     end
   end

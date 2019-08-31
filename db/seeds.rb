@@ -32,8 +32,8 @@ end
 puts "Seeding crops.."
 File.open("crops.csv", "r") do |f|
   f.each_with_index do |line, index|
-    country, province, cat, shortname, name, photo = line.chomp.split (",")
-  Crop.create(country_id: country, province_id: province, category_id: cat, shortname: shortname, name: name, photo: photo)
+    country, province, cat, shortname, name, photo, water, nutrients, temperature, soil,  elevation, humidity,  ph = line.chomp.split (",")
+  Crop.create(country_id: country, province_id: province, category_id: cat, shortname: shortname, name: name, photo: photo, water: water, nutrients: nutrients, temperature: temperature, soil: soil, elevation: elevation, humidity: humidity, ph: ph)
   end
 end
 
