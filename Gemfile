@@ -6,7 +6,7 @@ ruby '2.6.3'
 gem "chart"
 gem 'devise', github: 'plataformatec/devise'
 gem 'rails', '~> 6.0.0'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 gem 'sass-rails', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
